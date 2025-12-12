@@ -1,0 +1,271 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 20px;
+}
+
+.container {
+  width: 100%;
+  max-width: 500px;
+}
+
+.calculator-card {
+  background: white;
+  border-radius: 20px;
+  padding: 40px;
+  box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3);
+  animation: slideIn 0.5s ease-out;
+}
+
+@keyframes slideIn {
+  from {
+    opacity: 0;
+    transform: translateY(-30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+h1 {
+  color: #333;
+  text-align: center;
+  margin-bottom: 10px;
+  font-size: 2.5rem;
+}
+
+.subtitle {
+  text-align: center;
+  color: #666;
+  margin-bottom: 30px;
+  font-size: 1.1rem;
+}
+
+.form-group {
+  margin-bottom: 25px;
+}
+
+label {
+  display: block;
+  margin-bottom: 8px;
+  color: #555;
+  font-weight: 600;
+  font-size: 0.95rem;
+}
+
+input[type="number"] {
+  width: 100%;
+  padding: 15px;
+  border: 2px solid #e0e0e0;
+  border-radius: 10px;
+  font-size: 1rem;
+  transition: all 0.3s ease;
+  outline: none;
+}
+
+input[type="number"]:focus {
+  border-color: #667eea;
+  box-shadow: 0 0 0 3px rgba(102, 126, 234, 0.1);
+}
+
+input[type="number"]::placeholder {
+  color: #aaa;
+}
+
+.btn-calculate {
+  width: 100%;
+  padding: 15px;
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  color: white;
+  border: none;
+  border-radius: 10px;
+  font-size: 1.1rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.btn-calculate:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 10px 25px rgba(102, 126, 234, 0.4);
+}
+
+.btn-calculate:active {
+  transform: translateY(0);
+}
+
+.info-section {
+  margin-top: 30px;
+  padding: 20px;
+  background: #f8f9fa;
+  border-radius: 10px;
+}
+
+.info-section h3 {
+  color: #333;
+  margin-bottom: 15px;
+  font-size: 1.1rem;
+}
+
+.info-section ul {
+  list-style: none;
+}
+
+.info-section li {
+  padding: 8px 0;
+  color: #555;
+  font-size: 0.95rem;
+}
+
+/* Цветовые индикаторы категорий */
+.underweight {
+  color: #3498db;
+  font-size: 1.5rem;
+  margin-right: 8px;
+}
+
+.normal {
+  color: #2ecc71;
+  font-size: 1.5rem;
+  margin-right: 8px;
+}
+
+.overweight {
+  color: #f39c12;
+  font-size: 1.5rem;
+  margin-right: 8px;
+}
+
+.obese {
+  color: #e74c3c;
+  font-size: 1.5rem;
+  margin-right: 8px;
+}
+
+/* Страница результата */
+.result-section {
+  text-align: center;
+  margin: 30px 0;
+}
+
+.bmi-value {
+  margin: 30px 0;
+}
+
+.bmi-number {
+  font-size: 5rem;
+  font-weight: bold;
+  color: #667eea;
+  display: block;
+  line-height: 1;
+}
+
+.category-badge {
+  display: inline-block;
+  padding: 15px 30px;
+  border-radius: 50px;
+  font-size: 1.5rem;
+  font-weight: bold;
+  margin: 20px 0;
+  color: white;
+}
+
+.category-badge.underweight {
+  background: #3498db;
+}
+
+.category-badge.normal {
+  background: #2ecc71;
+}
+
+.category-badge.overweight {
+  background: #f39c12;
+}
+
+.category-badge.obese {
+  background: #e74c3c;
+}
+
+.details {
+  margin: 30px 0;
+  padding: 20px;
+  background: #f8f9fa;
+  border-radius: 10px;
+}
+
+.details p {
+  margin: 10px 0;
+  color: #555;
+  font-size: 1.1rem;
+}
+
+.advice {
+  margin: 20px 0;
+  padding: 20px;
+  background: #fff3cd;
+  border-left: 4px solid #ffc107;
+  border-radius: 5px;
+}
+
+.advice p {
+  color: #856404;
+  font-size: 1rem;
+  line-height: 1.5;
+}
+
+.btn-back {
+  display: inline-block;
+  width: 100%;
+  padding: 15px;
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  color: white;
+  text-align: center;
+  text-decoration: none;
+  border-radius: 10px;
+  font-size: 1.1rem;
+  font-weight: 600;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.btn-back:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 10px 25px rgba(102, 126, 234, 0.4);
+}
+
+.error-message {
+  color: #e74c3c;
+  font-size: 1.2rem;
+  margin: 30px 0;
+  text-align: center;
+}
+
+/* Адаптивность */
+@media (max-width: 600px) {
+  .calculator-card {
+    padding: 30px 20px;
+  }
+  
+  h1 {
+    font-size: 2rem;
+  }
+  
+  .bmi-number {
+    font-size: 4rem;
+  }
+  
+  .category-badge {
+    font-size: 1.2rem;
+    padding: 12px 25px;
+  }
+}
