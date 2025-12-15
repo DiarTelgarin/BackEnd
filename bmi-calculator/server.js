@@ -3,14 +3,11 @@ const path = require('path');
 const app = express();
 const PORT = 3000;
 
-// Middleware для обработки данных форм
 app.use(express.urlencoded({ extended: true }));
 app.use(express.json());
 
-// Middleware для статических файлов (CSS)
 app.use(express.static('public'));
 
-// GET / - Главная страница с формой
 app.get('/', (req, res) => {
   res.send(`
     <!DOCTYPE html>
@@ -90,11 +87,9 @@ app.get('/', (req, res) => {
   `);
 });
 
-// POST /calculate-bmi - Расчет BMI
 app.post('/calculate-bmi', (req, res) => {
   const { weight, height } = req.body;
   
-  // Валидация входных данных
   const weightNum = parseFloat(weight);
   const heightNum = parseFloat(height);
   
@@ -121,11 +116,9 @@ app.post('/calculate-bmi', (req, res) => {
     `);
   }
   
-  // Расчет BMI
   const bmi = weightNum / (heightNum * heightNum);
   const bmiRounded = bmi.toFixed(1);
   
-  // Определение категории
   let category = '';
   let categoryClass = '';
   let advice = '';
@@ -148,7 +141,6 @@ app.post('/calculate-bmi', (req, res) => {
     advice = 'Consult with a healthcare provider for a personalized plan.';
   }
   
-  // Отправка результата
   res.send(`
     <!DOCTYPE html>
     <html lang="en">
@@ -190,8 +182,6 @@ app.post('/calculate-bmi', (req, res) => {
   `);
 });
 
-// Запуск сервера
 app.listen(PORT, () => {
-  console.log(`🚀 BMI Calculator server is running on http://localhost:${PORT}`);
-  console.log(`📊 Open your browser and visit: http://localhost:${PORT}`);
+  console.log(`BMI Calculator server http://localhost:${PORT}`);
 });
